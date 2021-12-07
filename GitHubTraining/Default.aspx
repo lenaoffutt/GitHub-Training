@@ -11,7 +11,17 @@
     <div>
         <asp:Button ID="btnDesc" runat="server" Text="Show Description" OnClick="btnDesc_Click" /><br /><br />
         <asp:Label ID="lblDesc" runat="server" Text="This is a test application for training to use GIT" Visible="False"></asp:Label>
-    
+        
+        
+        <asp:GridView ID="gvDevInfo" runat="server" AutoGenerateColumns="False" DataSourceID="dsCSI" EnableModelValidation="True">
+            <Columns>
+                <asp:BoundField DataField="agent_fname" HeaderText="agent_fname" SortExpression="agent_fname" />
+                <asp:BoundField DataField="agent_lname" HeaderText="agent_lname" SortExpression="agent_lname" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="dsCSI" runat="server" ConnectionString="<%$ ConnectionStrings:CSIConnectionString %>" SelectCommand="select agent_fname, agent_lname
+from dbo.agents
+where enterprise_id = 'lwoods7'"></asp:SqlDataSource>
     </div>
     </form>
 </body>
