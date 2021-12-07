@@ -16,4 +16,9 @@ public partial class _Default : System.Web.UI.Page
     {
         lblDesc.Visible = true;
     }
+
+    protected void btnDev_Click(object sender, EventArgs e)
+    {
+        gvDevInfo.Visible = true;
+    }
 }
